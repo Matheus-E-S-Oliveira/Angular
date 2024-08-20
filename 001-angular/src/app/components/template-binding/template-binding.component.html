@@ -1,0 +1,29 @@
+<p>template-binding works!</p>
+<p>text interpolation 
+<!-- {{name}}--{{age}}--{{sum(1,2)}}
+{{age > 1 ? "True" : "False"}}
+{{2*80}}</p> -->
+<hr />
+<h2>Property binding</h2>
+<!-- para receber elemento no html deve se colocar a propiedade entre [] -->
+ <!-- exemplo [name] = "nome"  -->
+  <!-- <element [property]= "value"</element> -->
+<button [disabled]="isDisabled">Button</button>
+<hr />
+<h2>Attribute binding</h2>
+<!-- <element [attr.attribute-you-are-targering]="value"></elemnete> -->
+<!-- consegue manipular os atributos no html -->
+<p [attr.aria-Label]="name">Daner Tronquatte</p>
+<hr />
+<h2>Class and Style binding</h2>
+<!-- manipulçaõ de classes via html -->
+ <!-- chama a a class.classe que voce quer trabalhar -->
+<!-- e possivel passar condições e validações também -->
+ <!-- e possivel tambem fazer isso com styles -->
+<p [class.background-blue]="age"></p>
+<hr />
+<h2>Event binding</h2>
+<!-- se caracteriza como eventos qu eacontecem no navegador -->
+ <button (click)="sum()">+</button>
+ <button (click)="sum()">-</button>
+ 
