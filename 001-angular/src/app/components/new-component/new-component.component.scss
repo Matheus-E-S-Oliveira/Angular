@@ -1,0 +1,22 @@
+//; host e um seletor especial que se refere ao componenete em que está
+//sendo usado, é usado para aplicar o estilo dirtamnete no component eem vez de
+//aplicar stle pelos seus eleemnetos filhos,
+//eviat vazamneto de irformação tanto pra dentro quanto para forma 
+:host{
+    h2{
+        background-color: purple;
+    }
+}
+//e um seletor qu epermite aplicar estilos como base no contexto do componnete pai
+:host-context(.theme-dark){
+    h2{
+        background: black;
+        color:  white;
+    }
+}
+//ng-deep e um mecanismo de que permite os estilos definidos em um componente sejam aplicados aos elementos
+::ng-deep{
+    .theme-dark{
+        border: 5px solid blue;
+    }
+}
