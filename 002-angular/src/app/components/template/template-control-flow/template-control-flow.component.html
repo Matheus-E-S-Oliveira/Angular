@@ -1,0 +1,95 @@
+<h2>Control flow</h2>
+<h3>IF</h3>
+<!-- mesma funcionalidade que o if normal -->
+ <!-- @if, @else if, @else -->
+ <!-- control flow -->
+@if(1===1){
+    Yes
+}@else{
+    No
+}
+<!-- Froma antiga de criar
+ precisa do CommonModule para funcionar ou NgIf
+<ng-container *ngIf="isTrue; else isFalse">
+    <p>Dener</p>
+</ng-container>
+<ng-template #isFalse>Não foi possivel executar</ng-template> -->
+<h3>For</h3>
+<!-- nova forma -->
+<!-- com idd -->
+@if(loadingData$ | async; as data){
+    <ul>
+        @for(item of data; track item){
+            <li>{{item}}</li>
+        }
+    </ul>
+}@else {
+    <p>Carregando...</p>
+}
+<!-- sem if -->
+ @for(item of loadingData$ | async; track item){
+    <ul>
+        <li>{{item}}</li>
+    </ul>
+}
+<!-- forma antiga -->
+ <!-- precisa importa NgFor para for funcionar -->
+<!-- <ng-container *ngIf="loadingData$ | async as data; else loading">
+    <ul>
+        <ng-container *ngFor="let item of data; trackBy: trackByFn">
+            <li>{{item}}</li>
+        </ng-container>
+    </ul>
+</ng-container>
+<ng-template #loading> <p>Carregando...</p> </ng-template> -->
+<!-- pegando valor -->
+ <input #name type="text">
+ <button (click)="addNewName(name.value)">Add Name</button>
+ <!-- Para quando a lista não tiver valores -->
+  <ul>
+    @for(item of itens; track item.name){
+        <li>{{item.name}}</li>
+    }@empty {
+        <li>Não contem valores</li>
+    }
+  </ul>
+<!-- forma antiga -->
+ <!-- precisa importa NgFor para funcionar -->
+ <!-- <ul>
+    <ng-container *ngIf="itens.length === 0; else itemExist">
+        <li>ão contem valores</li>
+    </ng-container>
+
+    <ng-template #itemExist>
+        <ng-container *ngFor="let item of itens">
+           <li>
+                {{item.name}}
+          </li>
+        </ng-container>
+    </ng-template>
+ </ul> -->
+ <!-- switch case -->
+  <!-- nova forma -->
+@switch (switchCondition) {
+    @case ("A") {
+        <p>Sim sua letra é: A</p>
+    }
+    @case ("B") {
+        <p>Sim sua letra é: B</p>
+    }
+    @default {
+        <p>Os dados não froam encontrados</p>
+    }
+}
+<!-- froma antiga-->
+ <!-- <ng-container [ngSwitch]="switchCondition">
+    <ng-container *ngSwitchCase="A">
+        <p>Sim sua letra é: A</p>
+    </ng-container>
+    <ng-container *ngSwitchCase="B">
+        <p>Sim sua letra é: B</p>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+        <p>Os dados não froam encontrados</p>
+    </ng-container>
+ </ng-container> -->
