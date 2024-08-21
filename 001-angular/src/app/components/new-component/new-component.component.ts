@@ -9,5 +9,5 @@ import { TesteComponent } from '../teste/teste.component';
   styleUrl: './new-component.component.scss'
 })
 export class NewComponent {
-
+  public name = "New Component"
 }

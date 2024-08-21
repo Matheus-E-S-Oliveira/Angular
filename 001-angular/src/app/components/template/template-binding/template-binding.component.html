@@ -1,0 +1,53 @@
+<p>template-binding works!</p>
+<p>text interpolation 
+{{name}}--{{age}}
+{{age > 1 ? "True" : "False"}}
+{{2*80}}</p>
+<hr />
+<h2>Property binding</h2>
+<!-- para receber elemento no html deve se colocar a propiedade entre [] -->
+ <!-- exemplo [name] = "nome"  -->
+  <!-- <element [property]= "value"</element> -->
+<button [disabled]="isDisabled">Button</button>
+<hr />
+<h2>Attribute binding</h2>
+<!-- <element [attr.attribute-you-are-targering]="value"></elemnete> -->
+<!-- consegue manipular os atributos no html -->
+<p [attr.aria-Label]="name">Daner Tronquatte</p>
+<hr />
+<h2>Class and Style binding</h2>
+<!-- manipulçaõ de classes via html -->
+ <!-- chama a a class.classe que voce quer trabalhar -->
+<!-- e possivel passar condições e validações também -->
+ <!-- e possivel tambem fazer isso com styles -->
+<p [class.background-blue]="age > 32" [class.background-blueV]="age < 32">{{name}}</p>
+<!-- para força evento e so colocar entre " 'underline' " -->
+<p [style.text-decoration]="isTextDecoration">{{age}}</p>
+{{isTextDecoration}}
+<hr />
+<h2>Event binding</h2>
+<!-- se caracteriza como eventos qu eacontecem no navegador -->
+ <button (click)="sum()">+</button>
+ <button (click)="sub()">-</button>
+ <input (keydown.shift.t)="onKeyDown($event)" />
+
+ <div style="background: blue; width: 300px; height: 300px; margin-top: 10px;"
+ (mousemove)="onMouseMove($event)"></div>
+ 
+ <hr />
+ <h3>Two-way binding</h3>
+ <input [(ngModel)]="name" />
+
+ {{name}}
+ <hr />
+<!-- Diretivas de atributo não e um template -->
+<!-- cuidado ao usar diretivas pois precisa importar elas -->
+ <h3>Diretivas de atributos</h3>
+ <!-- da reatividade ao codigo -->
+ <div [ngClass]="{ 'background-black': isDisabled }">classes condicionais.</div>
+
+ <div [ngStyle]="{
+  color: age <= 32 ? 'white' : 'blue',
+  'font-size': age > 25 ? '30px': '35px',
+ }">Estilo dinamico.{{age}}</div>
+ <hr />
