@@ -1,0 +1,40 @@
+<h2>Deferrable Views</h2>
+<app-new-componets />
+<!-- serve para adiar execução de um codigo ou carregar algo -->
+ <!-- por causa do defer ele entende que vai ter um andiatamento na hora de ser carregado -->
+<!-- defer aceita argumentos -->
+@defer () {
+    <app-new-componets />
+<!-- motra algo antes de carregar o componente -->
+}@placeholder {
+    <p>Mostra antes de carragar algo</p>
+<!-- do carregamento do component -->
+}@loading {
+    <p>Loading....</p>
+<!-- caso não consiga carregar o componente -->
+}@error {
+    <p>Loading falid</p>
+}
+<!-- on idle -aciona o carregamento adiado quando o navegador atingir um estado inativo-->
+<!-- on timer(tempo) executa apos o tempo passado -->
+<!-- on viewport carrega apenas quando scroll chega nele -->
+<!-- on intereraction carrega quando a interação-->
+<!-- on hover carrga quando se passa evento de passar o mause(mause enter)-->
+<!-- on immediate carrega apos reinderizaação -->
+<!-- on prefetch carrega mas so mostra apos uma interação-->
+<!-- varios on ou when são condiçoes OR, o primeiro que foi resolvido retorna -->
+<!-- when especifica uma condição que retona boolean, quando se retorna boolean executa quele trecho ou pode carregar uma condição de Observable um async -->
+@defer(){
+
+}@placeholder {
+ <!--e a primeira coisa que vai aparecer  -->
+ <!-- pode se colocar condições(acionadroes) -->
+ <!--minimun mostra a menssagem por um minimo de tempo declarado -->
+ <!--  -->
+}@loading {
+<!-- serve para quando vai fazer dowloding do chunc do componente -->
+<!-- after uma condiçao para ver tempo de carregamento; minimum caso true executa depois mais esse tempo-->
+<!-- afeter 150ms; minimum 2s -->
+}@error {
+<!-- e quando a um problema -->
+}
