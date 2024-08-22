@@ -16,7 +16,15 @@ export class SignalsComponent {
   });
 
   public array = signal([1]);
-// effect 
+// effect e baseado no signal, tem comportamentos de acordo com o signal
+// raramente utilizado, mas uteis em situaçãoes especificas
+// eles são Registro de dados sendo exibidos e quando eles mudam, seja para analise ou como ferramenta den depuração
+//manter dados sincronizados com  o window.localStorege
+//Adiconar comportamento DOM personalizado que não pode ser expresso com sintaxe de modela
+//Executar renderização personalizada em um <canvas>, bibiotleca d egráficos ou outra biblioteca de Ui de terceiros
+//so vai aparecer dados se o signal tiver cadastrado dentro do effect
+//não muda signal quando e o mesmo o valor
+//atualiza os dados apenas quando a atualizão no signal
   constructor( ) {
     effect(()=>{
       console.log(this.firstName())
